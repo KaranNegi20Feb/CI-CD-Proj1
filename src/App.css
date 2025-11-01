@@ -1,0 +1,84 @@
+:root {
+  color-scheme: light dark;
+  --bg: #0b0f16;
+  --grid: #1a2333;
+  --snake: #60a5fa;
+  --head: #38bdf8;
+  --food: #f97316;
+  --text: #e5e7eb;
+  --over: #ef4444;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
+}
+
+.wrap {
+  width: min(92vw, 540px);
+}
+
+h1 {
+  font-size: 24px;
+  margin: 16px 0 8px;
+}
+
+.hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.actions { display: flex; gap: 8px; }
+
+button {
+  appearance: none;
+  border: 1px solid #334155;
+  background: #111827;
+  color: var(--text);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover { background: #0b1220; }
+
+.board {
+  width: 92vw;
+  max-width: 540px;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  gap: 2px;
+  background: #0f172a;
+  border: 1px solid #1f2937;
+  border-radius: 10px;
+  padding: 6px;
+  transition: box-shadow .2s ease;
+}
+.board.over {
+  box-shadow: 0 0 0 2px var(--over) inset;
+}
+
+.cell {
+  background: var(--grid);
+  border-radius: 4px;
+}
+.cell.snake { background: color-mix(in oklab, var(--snake) 85%, black); }
+.cell.head  { background: var(--head); }
+.cell.food  { background: var(--food); }
+
+.hint {
+  opacity: 0.7;
+  font-size: 13px;
+  margin-top: 10px;
+  text-align: center;
+}
