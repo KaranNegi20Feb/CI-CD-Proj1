@@ -150,7 +150,7 @@ export default function App() {
 
   return (
     <div className="wrap">
-      <h1>Snake</h1>
+      <h1>Snake Game</h1>
       <div className="hud">
         <div>Score: {score}</div>
         <div>{running ? 'Running' : 'Paused'}{gameOver ? ' · Game Over' : ''}</div>
